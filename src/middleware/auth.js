@@ -12,7 +12,7 @@ const authUser = async (req,res,next) => {
        const validatedToken = await jwt.verify(token,'DevtinderSecretdata')
        const { _id } = validatedToken
 
-       const user = await User.findById(_id)
+       const user = await User.findById(_id) 
        
        if(!user) {
         throw new Error('No user found')
